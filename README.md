@@ -23,7 +23,7 @@ In this exercise, you will:
 
 Simply copy the exercise to your account, then wait **about 20 seconds** for the setup to complete, then **refresh the page**.
 
-[![](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=rishirajsingh90&template_name=copilot-bootcamp-starter&owner=%40me&name=copilot-bootcamp-item-deletion&description=Exercise:+Implement+item+deletion+with+GitHub+Copilot&visibility=public)
+[![](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=ilan-klinghofer&template_name=copilot-bootcamp-starter&owner=%40me&name=copilot-bootcamp-item-deletion&description=Exercise:+Implement+item+deletion+with+GitHub+Copilot&visibility=public)
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>
