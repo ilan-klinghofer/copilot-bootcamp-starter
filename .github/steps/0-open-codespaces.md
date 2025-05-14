@@ -14,21 +14,25 @@ Having a consistent development environment ensures all bootcamp participants ha
 
 ### :keyboard: Activity: Launch a Codespace for this repository
 
-1. Click on the **Code** button at the top of the repository page.
+1. Left-click the below button to open the **Create Codespace** page in a new tab. Use the default configuration.
 
-2. Select the **Codespaces** tab in the dropdown menu.
+   [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/{{full_repo_name}}?quickstart=1)
 
-3. Click on the **Create codespace on main** button.
-   ![Create codespace button](https://docs.github.com/assets/cb-138303/images/help/codespaces/new-codespace-button.png)
+1. Confirm the **Repository** field is your copy of the exercise, not the original, then click the green **Create Codespace** button.
 
-4. Wait for your codespace to start. This may take a few moments as GitHub sets up a fresh development environment for you.
+   - ✅ Your copy: `/{{{full_repo_name}}}`
+   - ❌ Original: `/skills/getting-started-with-github-copilot`
 
-5. When the codespace is ready, you'll see a Visual Studio Code interface in your browser. This environment includes:
+1. Wait a moment for Visual Studio Code to load in your browser.
+
+1. Wait for your codespace to start. This may take a few moments as GitHub sets up a fresh development environment for you.
+
+1. When the codespace is ready, you'll see a Visual Studio Code interface in your browser. This environment includes:
    - All required dependencies pre-installed
    - The project code already cloned and ready to use
    - VS Code extensions needed for the bootcamp pre-configured
 
-6. Explore the environment by opening the Explorer panel (click the files icon in the left sidebar) and navigating through the project structure.
+1. Explore the environment by opening the Explorer panel (click the files icon in the left sidebar) and navigating through the project structure.
 
 ### Success Criteria
 
