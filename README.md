@@ -40,16 +40,6 @@ If the exercise isn't ready in 20 seconds, please check the Actions tab.
 
 </details>
 
-After copying the repository:
-
-1. Clone the repository to your local machine
-2. Install the GitHub Copilot extension in VS Code if you haven't already
-3. Run `npm install` at the root of the project to install all dependencies
-4. Start the application with `npm run dev`
-5. Follow the tutorial instructions in the GitHub issue that will be created automatically
-
-The tutorial will guide you through implementing delete functionality using GitHub Copilot's Agent mode.
-
 ---
 
 &copy; 2025 Slalom &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
