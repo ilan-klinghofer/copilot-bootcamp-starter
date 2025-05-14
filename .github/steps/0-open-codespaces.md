@@ -21,7 +21,7 @@ Having a consistent development environment ensures all bootcamp participants ha
 1. Confirm the **Repository** field is your copy of the exercise, not the original, then click the green **Create Codespace** button.
 
    - ✅ Your copy: `/{{{full_repo_name}}}`
-   - ❌ Original: `/skills/getting-started-with-github-copilot`
+   - ❌ Original: `/ilan-klinghofer/copilot-bootcamp-starter`
 
 1. Wait a moment for Visual Studio Code to load in your browser.
 
