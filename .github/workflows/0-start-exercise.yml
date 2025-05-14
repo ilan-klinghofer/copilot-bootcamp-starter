@@ -12,6 +12,7 @@ permissions:
   issues: write
 
 env:
+  STEP_0_FILE: ".github/steps/0-open-codespaces.md"
   STEP_1_FILE: ".github/steps/1-add-delete-functionality.md"
 
 jobs:
@@ -21,8 +22,8 @@ jobs:
     name: Start Exercise
     uses: skills/exercise-toolkit/.github/workflows/start-exercise.yml@v0.4.0
     with:
-      exercise-title: "Implementing Delete Functionality with GitHub Copilot"
-      intro-message: "Welcome to the Copilot Bootcamp tutorial! 🚀 In this exercise, you'll use GitHub Copilot's Agent Mode to implement item deletion functionality in a full-stack application. Let's see how Copilot can help you add features quickly and efficiently across both frontend and backend code. Get ready to experience the power of AI-assisted coding! 💻✨"
+      exercise-title: "GitHub Copilot Bootcamp"
+      intro-message: "Welcome to the Copilot Bootcamp tutorial! 🚀 This guided experience will take you through setting up your development environment with GitHub Codespaces and then implementing new features using GitHub Copilot's Agent Mode. Get ready to experience the power of AI-assisted coding in a cloud development environment! 💻✨"
 
   post_next_step_content:
     name: Post next step content
@@ -46,7 +47,7 @@ jobs:
         id: build-comment
         uses: skills/action-text-variables@v2
         with:
-          template-file: ${{ env.STEP_1_FILE }}
+          template-file: ${{ env.STEP_0_FILE }}
           template-vars: |
             login: ${{ github.actor }}
             full_repo_name: ${{ github.repository }}
@@ -65,9 +66,34 @@ jobs:
             --body-file "exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Enable verification workflow
+          
+      - name: Create comment - next step instructions
         run: |
-          gh workflow enable "Verify Delete Functionality"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          gh issue comment "$ISSUE_URL" \
+            --body $'### Next Step: Implementing Delete Functionality\n\nOnce you have successfully launched your codespace, you\'ll be ready to implement the delete functionality using GitHub Copilot\'s Agent mode.\n\nTo continue to the next step, check out the instructions below 👇'
+              env:
+                GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Build comment - next step content
+              id: build-next-comment
+              uses: skills/action-text-variables@v2
+              with:
+                template-file: ${{ env.STEP_1_FILE }}
+                template-vars: |
+                  login: ${{ github.actor }}
+                  full_repo_name: ${{ github.repository }}
+
+            - name: Create comment - next step content
+              run: |
+                gh issue comment "$ISSUE_URL" \
+                  --body "$NEXT_ISSUE_BODY"
+              env:
+                GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                NEXT_ISSUE_BODY: ${{ steps.build-next-comment.outputs.updated-text }}
+
+            - name: Enable verification workflow
+              run: |
+                gh workflow enable "Verify Delete Functionality"
+              env:
+                GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
