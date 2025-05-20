@@ -15,7 +15,7 @@ Let's add the ability to delete items from our application. This will require ch
 
 1. Open the **Copilot** chat panel and switch to **Agent** mode using the dropdown menu.
 
-2. Use the following prompt to ask Copilot to implement the delete functionality:
+1. Use the following prompt to ask Copilot to implement the delete functionality:
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
@@ -23,18 +23,22 @@ Let's add the ability to delete items from our application. This will require ch
    > I want the ability to delete an item
    > ```
 
-3. Copilot will analyze your codebase and implement:
+1. Copilot will analyze your codebase and implement:
    - A new DELETE endpoint in the backend
    - Delete buttons next to each item in the frontend
    - Event handlers to connect the buttons to the API
 
-4. When Copilot finishes making the changes, review what was modified:
+1. When Copilot finishes making the changes, review what was modified:
    - In the backend (`packages/backend/src/app.js`), you should see a new DELETE endpoint
    - In the frontend (`packages/frontend/src/App.js`), you should see delete buttons added next to each item
 
-5. Run the application with `npm run dev` in the root directory to test the new functionality.
+1. If it's not already running, run the application with `npm run start` in the root directory to test the new functionality.
 
-6. Try deleting some items to verify everything works as expected.
+1. Try deleting some items to verify everything works as expected.
+
+1. Keep the changes that copilot implemented.
+
+1. Commit and push to the main branch.
 
 ### Success Criteria
 
