@@ -62,11 +62,11 @@ jobs:
         with:
           template-file: exercise-toolkit/markdown-templates/step-feedback/step-results-table.md
           template-vars: |
-            step_number: 2
+            step_number: 1
             passed: ${{ !contains(steps.*.outcome, 'failure') }}
             results_table:
               - description: "The text 'Hello World' should appear in the file packages/frontend/src/App.js"
-                passed: ${{ steps.check-additional-activities.outcome == 'success' }}
+                passed: ${{ steps.check-hello-world-title.outcome == 'success' }}
 
       - name: Create comment - step results
         run: |
@@ -138,31 +138,3 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-
-
-
-
-
-
-
-      # - name: Check for "Hello World" title
-      #   id: check_title
-      #   run: |
-      #     title_check=$(grep -l "Hello World" packages/frontend/src/App.js || echo "")
-      #     if [ -n "$title_check" ]; then
-      #       echo "Title changed successfully! Found 'Hello World' in App.js"
-      #       echo "title_changed=true" >> $GITHUB_OUTPUT
-      #     else
-      #       echo "Title not changed. Could not find 'Hello World' in App.js"
-      #       echo "title_changed=false" >> $GITHUB_OUTPUT
-      #     fi
-
-      # - name: Update issue if title changed
-      #   if: steps.check_title.outputs.title_changed == 'true'
-      #   run: |
-      #     issue_number=$(gh issue list --label "bootcamp" --json number --jq '.[0].number')
-      #     if [ -n "$issue_number" ]; then
-      #       gh issue comment $issue_number --body "🎉 Great job! You've successfully changed the title to 'Hello World' using GitHub Copilot Agent with Claude 3.7 Sonnet. You've completed the first step of the bootcamp!"
-      #     fi
-      #   env:
-      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
