@@ -1,30 +1,41 @@
 ## Review
 
-_Congratulations, you've completed this exercise and learned a lot about GitHub Copilot!_
+_Congratulations, you've completed session 2 of the Copilot Bootcamp tutorial and learned a lot about GitHub Copilot!_
 
 <img src="https://octodex.github.com/images/jetpacktocat.png" alt=celebrate width=200 align=right>
 
 Here's a recap of your accomplishments:
 
-- Set up your GitHub Codespace and environment.
-- Learned how to use Copilot inline suggestions, Chat, and Edits.
-- Used Copilot to generate commit messages and pull request summaries.
-- Learned how to request Copilot to review your code.
+- Set up your GitHub Codespace development environment
+- Used GitHub Copilot Agent Mode with Claude 3.7 Sonnet to modify application content
+- Implemented delete functionality across both frontend and backend components
+- Learned how to use Copilot to handle complex, multi-step coding tasks
 
 ### What's next?
 
-- Continue working on the project
-  - Use Copilot to add a function for students to unregister from an activity.
-  - Use Copilot to fix issues found during a pull request review.
-  - Use Copilot to generate tests and documentation.
-  - Use Copilot with different models.
-- Check out the other [GitHub Skills exercises](https://skills.github.com).
-  - Learn how to [Integrate MCP with Copilot](https://github.com/skills/integrate-mcp-with-copilot)
-  - Try building your first [GitHub Copilot Extension](https://github.com/skills/your-first-extension-for-github-copilot)
+- Session 3
+  - Instructions files and documentation
+- Continue working on this project
+  - Use Copilot to add filtering functionality for the items list
+  - Implement item editing capabilities
+  - Add search functionality to the application
+  - Create unit tests for your components and endpoints
+- Explore different AI models with Copilot
+  - Try using GPT-4o for complex architectural decisions
+  - Use Claude models for natural language processing tasks
+  - Experiment with code explanation and documentation generation
+- Apply what you've learned in your own projects
+  - Use Copilot Agent Mode to implement new features
+  - Accelerate debugging with AI assistance
+  - Generate and improve tests with Copilot
 
-Check out these resources to learn more about GitHub Copilot :
+### Resources to enhance your GitHub Copilot skills:
 
-- Are you not getting the responses you want from Copilot? [Learn prompt engineering](https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/prompt-engineering-for-copilot-chat)
-- Explore GitHub Copilot [Slash Commands](https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/github-copilot-chat-cheat-sheet?tool=vscode).
-- See what other features are available [GitHub Copilot Features](https://docs.github.com/en/copilot/about-github-copilot/github-copilot-features).
-- Take a look at the [GitHub Copilot Documentation](https://docs.github.com/en/copilot).
+- **Improve your prompting skills**: [Prompt Engineering Guide for Copilot Chat](https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/prompt-engineering-for-copilot-chat)
+- **Master Copilot commands**: [GitHub Copilot Slash Commands](https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/github-copilot-chat-cheat-sheet?tool=vscode)
+- **Explore advanced capabilities**: [GitHub Copilot Features](https://docs.github.com/en/copilot/about-github-copilot/github-copilot-features)
+- **Learn Agent Mode techniques**: [Working with Copilot Agent](https://docs.github.com/en/copilot/using-github-copilot/copilot-agent/working-with-agent)
+- **Switch between AI models**: [GitHub Copilot with Different Models](https://docs.github.com/en/copilot/using-github-copilot/copilot-chat/using-github-copilot-chat#selecting-a-different-model)
+- **Complete documentation**: [GitHub Copilot Documentation](https://docs.github.com/en/copilot)
+
+Congratulations on completing the Slalom Copilot Bootcamp, and thank you for participating! We hope you've gained valuable insights into how GitHub Copilot can enhance your development workflow and productivity.
