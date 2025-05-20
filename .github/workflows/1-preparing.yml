@@ -52,7 +52,7 @@ jobs:
         uses: skills/action-keyphrase-checker@v1
         with:
           text-file: packages/frontend/src/App.js
-          keyphrase: '"Hello World"'
+          keyphrase: 'Hello World'
           minimum-occurrences: 1
           case-sensitive: false
 
@@ -65,7 +65,7 @@ jobs:
             step_number: 2
             passed: ${{ !contains(steps.*.outcome, 'failure') }}
             results_table:
-              - description: "🎉 Great job! You've successfully changed the title to 'Hello World' using GitHub Copilot Agent with Claude 3.7 Sonnet. You've completed the first step of the bootcamp!"
+              - description: "The text 'Hello World' should appear in the file packages/frontend/src/App.js"
                 passed: ${{ steps.check-additional-activities.outcome == 'success' }}
 
       - name: Create comment - step results
@@ -95,7 +95,6 @@ jobs:
         run: |
           gh issue comment "$ISSUE_URL" \
             --body "$ISSUE_BODY" \
-            --edit-last
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_BODY: ${{ steps.build-message-step-finish.outputs.updated-text }}
