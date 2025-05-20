@@ -1,4 +1,4 @@
-name: Verify Delete Functionality
+name: Step 2 # Verify Delete Functionality
 
 on:
   push:

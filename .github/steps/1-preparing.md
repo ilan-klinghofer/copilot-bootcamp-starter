@@ -34,15 +34,41 @@ Having a consistent development environment ensures all bootcamp participants ha
 
 1. Explore the environment by opening the Explorer panel (click the files icon in the left sidebar) and navigating through the project structure.
 
-### Success Criteria
+1. Open a terminal by clicking on **Terminal** in the top menu, then **New Terminal**.
 
-To complete this activity successfully:
-- You should see a VS Code interface in your browser
-- The terminal should show that all dependencies are installed
-- The Explorer panel should display the project's file structure
-- The bottom status bar should indicate that you're connected to a codespace
+1. Run the following command to start the application:
 
-Once your codespace is up and running, you're ready to proceed to the next step of the bootcamp!
+   ```bash
+   npm run start
+   ```
+
+1. When the app has started, you should see logs indicating that both the frontend and backend are running. Click on the **Ports** tab at the bottom of the window, then click the "Open in Browser" icon (globe icon) for port 3000.
+
+1. You should see the application running in a new browser tab with the title "React Frontend with Node Backend".
+
+### :keyboard: Activity: Use GitHub Copilot Agent Mode to modify the app title
+
+Now, let's use GitHub Copilot's Agent Mode to change the application title:
+
+1. In VS Code, click on the **GitHub Copilot** icon in the sidebar (it looks like the GitHub Copilot symbol).
+
+1. At the top of the Copilot panel, click on the dropdown menu and select **Agent** mode.
+
+1. In the same dropdown menu, click the model selector (it might say "GPT-4o" or another model name) and select **Claude 3.7 Sonnet** from the list.
+
+1. In the Copilot chat input field at the bottom of the panel, type the following prompt:
+   
+   ```
+   Change the title of the main screen from "React Frontend with Node Backend" to "Hello World"
+   ```
+
+1. Press Enter and allow Copilot Agent to analyze the codebase and make the necessary changes.
+
+1. Once Copilot has completed the changes, refresh the browser tab where the application is running to see the updated title.
+
+1. Commit and push your changes to the main branch
+
+1. Now that your changes are pushed to GitHub, Mona should already be busy checking your work. Give her a moment and keep watch in the comments. You will see her respond with progress info and the next lesson.
 
 ### :bulb: Tip: Making the most of Codespaces
 
