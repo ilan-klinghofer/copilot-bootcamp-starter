@@ -34,6 +34,8 @@ Having a consistent development environment ensures all bootcamp participants ha
 
 1. Explore the environment by opening the Explorer panel (click the files icon in the left sidebar) and navigating through the project structure.
 
+1. You should see a terminal open that is automatically running final setups including 'npm install'. Wait for this to complete.
+
 1. Open a terminal by clicking on **Terminal** in the top menu, then **New Terminal**.
 
 1. Run the following command to start the application:
@@ -42,7 +44,9 @@ Having a consistent development environment ensures all bootcamp participants ha
    npm run start
    ```
 
-1. When the app has started, you should see logs indicating that both the frontend and backend are running. Click on the **Ports** tab at the bottom of the window, then click the "Open in Browser" icon (globe icon) for port 3000.
+1. When the app has started, you should see logs indicating that both the frontend and backend are running.
+
+1. A new browser tab should automatically open up, displaying the React app. If it doesn't, click on the **Ports** tab at the bottom of the window, then click the "Open in Browser" icon (globe icon) for port 3000.
 
 1. You should see the application running in a new browser tab with the title "React Frontend with Node Backend".
 
@@ -50,11 +54,12 @@ Having a consistent development environment ensures all bootcamp participants ha
 
 Now, let's use GitHub Copilot's Agent Mode to change the application title:
 
-1. In VS Code, click on the **GitHub Copilot** icon in the sidebar (it looks like the GitHub Copilot symbol).
+1. In VS Code, open Github Copilot.
 
-1. At the top of the Copilot panel, click on the dropdown menu and select **Agent** mode.
+1. At the bottom of the Copilot panel, in the 'Ask Copilot' text box, click on the dropdown menu (next to the send button) and select **Agent** mode.
 
 1. In the same dropdown menu, click the model selector (it might say "GPT-4o" or another model name) and select **Claude 3.7 Sonnet** from the list.
+   - *If you don't see a model selector dropdown, first type something into the GitHub Copilot chat to initialize Copilot*
 
 1. In the Copilot chat input field at the bottom of the panel, type the following prompt:
    
@@ -65,6 +70,8 @@ Now, let's use GitHub Copilot's Agent Mode to change the application title:
 1. Press Enter and allow Copilot Agent to analyze the codebase and make the necessary changes.
 
 1. Once Copilot has completed the changes, refresh the browser tab where the application is running to see the updated title.
+
+1. Review the changes made by Copilot and select 'Keep' for each change, or press the 'Keep' button in the copilot sidebar to accept all changes.
 
 1. Commit and push your changes to the main branch
 
