@@ -1,0 +1,57 @@
+name: Verify Add Component Functionality
+
+on:
+  push:
+    branches: [ feature/lesson-3 ]
+  pull_request:
+    branches: [ feature/lesson-3 ]
+  workflow_dispatch:
+
+jobs:
+  verify-delete-functionality:
+    name: Verify Add Component Functionality
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check for MUI in frontend package
+        id: check-package
+        run: |
+          if grep -E '@mui/material|@mui/styled-engine-sc|styled-components' packages/frontend/package.json; then
+            echo "::set-output name=has_mui_package::true"
+            echo "✅ MUI package found"
+          else
+            echo "::set-output name=has_mui_package::false"
+            echo "❌ MUI package not found"
+            exit 1
+          fi
+
+      - name: Check for new component in frontend
+        id: check-component
+        run: |
+          # Check for new component App.js
+          if grep -q "delete\|Delete\|remove\|Remove" packages/frontend/src/App.js && grep -q "onClick\|handleDelete" packages/frontend/src/App.js; then
+            echo "::set-output name=has_component::true"
+            echo "✅ Frontend component found"
+          else
+            echo "::set-output name=has_component::false"
+            echo "❌ Frontend component not found"
+            exit 1
+          fi
+
+      - name: Success message if both checks pass
+        if: steps.check-package.outputs.has_mui_package == 'true' && steps.check-component.outputs.has_component == 'true'
+        run: |
+          echo "🎉 Congratulations! You've successfully added MUI and created a new component!"
+          echo "Both the backend MUI library and frontend component are present."
