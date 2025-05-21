@@ -1,11 +1,11 @@
-# GitHub Copilot Bootcamp: Item Deletion Tutorial
+# GitHub Copilot Bootcamp: Agent Mode Basics
 
-_Learn how to use GitHub Copilot's Agent mode to implement delete functionality in a full-stack application._
+_Learn how to use GitHub Copilot's Agent mode to handle complex, multi-step coding tasks_
 
 ## Welcome
 
 - **Who is this for**: Developers at any experience level looking to leverage AI-assisted coding with GitHub Copilot.
-- **What you'll learn**: How to use GitHub Copilot Agent mode to implement features across both frontend and backend code.
+- **What you'll learn**: How to use GitHub Copilot Agent mode to handle complex, multi step coding tasks across both frontend and backend code.
 - **What you'll build**: You will implement item deletion functionality in a full-stack JavaScript application.
 - **Prerequisites**:
   - Basic knowledge of JavaScript, React, and Express
@@ -23,7 +23,7 @@ In this exercise, you will:
 
 Simply copy the exercise to your account, then wait **about 20 seconds** for the setup to complete, then **refresh the page**.
 
-[![](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=ilan-klinghofer&template_name=copilot-bootcamp-starter&owner=%40me&name=copilot-bootcamp-item-deletion&description=Exercise:+Implement+item+deletion+with+GitHub+Copilot&visibility=public)
+[![](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=ilan-klinghofer&template_name=copilot-bootcamp-starter&owner=%40me&name=copilot-bootcamp-agent-mode-basics&description=Exercise:+Implement+item+deletion+with+GitHub+Copilot&visibility=public)
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>

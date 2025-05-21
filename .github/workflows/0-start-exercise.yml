@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
 
 permissions:
   contents: write
@@ -12,8 +11,7 @@ permissions:
   issues: write
 
 env:
-  STEP_0_FILE: ".github/steps/0-open-codespaces.md"
-  STEP_1_FILE: ".github/steps/1-add-delete-functionality.md"
+  STEP_1_FILE: ".github/steps/1-preparing.md"
 
 jobs:
   start_exercise:
@@ -23,7 +21,7 @@ jobs:
     uses: skills/exercise-toolkit/.github/workflows/start-exercise.yml@v0.4.0
     with:
       exercise-title: "GitHub Copilot Bootcamp"
-      intro-message: "Welcome to the Copilot Bootcamp tutorial! 🚀 This guided experience will take you through setting up your development environment with GitHub Codespaces and then implementing new features using GitHub Copilot's Agent Mode. Get ready to experience the power of AI-assisted coding in a cloud development environment! 💻✨"
+      intro-message: "Welcome to the Copilot Bootcamp tutorial! 🚀 This guided experience will take you through setting up your development environment with GitHub Codespaces, using GitHub Copilot's Agent Mode to modify the app's title, and then implementing new features. Get ready to experience the power of AI-assisted coding in a cloud development environment! 💻✨"
 
   post_next_step_content:
     name: Post next step content
@@ -47,7 +45,7 @@ jobs:
         id: build-comment
         uses: skills/action-text-variables@v2
         with:
-          template-file: ${{ env.STEP_0_FILE }}
+          template-file: ${{ env.STEP_1_FILE }}
           template-vars: |
             login: ${{ github.actor }}
             full_repo_name: ${{ github.repository }}
@@ -67,33 +65,42 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
-      - name: Create comment - next step instructions
+      - name: Disable current workflow and enable next one
         run: |
-          gh issue comment "$ISSUE_URL" \
-            --body $'### Next Step: Implementing Delete Functionality\n\nOnce you have successfully launched your codespace, you\'ll be ready to implement the delete functionality using GitHub Copilot\'s Agent mode.\n\nTo continue to the next step, check out the instructions below 👇'
-              env:
-                GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          gh workflow enable "Step 1"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-            - name: Build comment - next step content
-              id: build-next-comment
-              uses: skills/action-text-variables@v2
-              with:
-                template-file: ${{ env.STEP_1_FILE }}
-                template-vars: |
-                  login: ${{ github.actor }}
-                  full_repo_name: ${{ github.repository }}
 
-            - name: Create comment - next step content
-              run: |
-                gh issue comment "$ISSUE_URL" \
-                  --body "$NEXT_ISSUE_BODY"
-              env:
-                GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                NEXT_ISSUE_BODY: ${{ steps.build-next-comment.outputs.updated-text }}
 
-            - name: Enable verification workflow
-              run: |
-                gh workflow enable "Verify Delete Functionality"
-              env:
-                GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      # - name: Create comment - next step instructions
+      #   run: |
+      #     gh issue comment "$ISSUE_URL" \
+      #       --body $'### Next Step: Implementing Delete Functionality\n\nOnce you have successfully changed the title to "Hello World", you\'ll be ready to implement the delete functionality using GitHub Copilot\'s Agent mode.\n\nTo continue to the next step, check out the instructions below 👇'
+      #   env:
+      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # - name: Build comment - next step content
+      #   id: build-next-comment
+      #   uses: skills/action-text-variables@v2
+      #   with:
+      #     template-file: ${{ env.STEP_1_FILE }}
+      #     template-vars: |
+      #       login: ${{ github.actor }}
+      #       full_repo_name: ${{ github.repository }}
+
+      # - name: Create comment - next step content
+      #   run: |
+      #     gh issue comment "$ISSUE_URL" \
+      #       --body "$NEXT_ISSUE_BODY"
+      #   env:
+      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     NEXT_ISSUE_BODY: ${{ steps.build-next-comment.outputs.updated-text }}
+
+      # - name: Enable verification workflows
+      #   run: |
+      #     gh workflow enable "Verify Delete Functionality"
+      #     gh workflow enable "Verify Title Change"
+      #   env:
+      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
