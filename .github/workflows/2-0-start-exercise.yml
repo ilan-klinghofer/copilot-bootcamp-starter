@@ -1,4 +1,4 @@
-name: Step 0 # Start Exercise
+name: Step 2-0 # Start Exercise
 
 on:
   push:
@@ -11,7 +11,7 @@ permissions:
   issues: write
 
 env:
-  STEP_1_FILE: ".github/steps/1-preparing.md"
+  STEP_1_FILE: ".github/steps/2-1-preparing.md"
 
 jobs:
   start_exercise:
@@ -67,40 +67,6 @@ jobs:
           
       - name: Disable current workflow and enable next one
         run: |
-          gh workflow enable "Step 1"
+          gh workflow enable "Step 2-1"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
-
-          
-      # - name: Create comment - next step instructions
-      #   run: |
-      #     gh issue comment "$ISSUE_URL" \
-      #       --body $'### Next Step: Implementing Delete Functionality\n\nOnce you have successfully changed the title to "Hello World", you\'ll be ready to implement the delete functionality using GitHub Copilot\'s Agent mode.\n\nTo continue to the next step, check out the instructions below 👇'
-      #   env:
-      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # - name: Build comment - next step content
-      #   id: build-next-comment
-      #   uses: skills/action-text-variables@v2
-      #   with:
-      #     template-file: ${{ env.STEP_1_FILE }}
-      #     template-vars: |
-      #       login: ${{ github.actor }}
-      #       full_repo_name: ${{ github.repository }}
-
-      # - name: Create comment - next step content
-      #   run: |
-      #     gh issue comment "$ISSUE_URL" \
-      #       --body "$NEXT_ISSUE_BODY"
-      #   env:
-      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #     NEXT_ISSUE_BODY: ${{ steps.build-next-comment.outputs.updated-text }}
-
-      # - name: Enable verification workflows
-      #   run: |
-      #     gh workflow enable "Verify Delete Functionality"
-      #     gh workflow enable "Verify Title Change"
-      #   env:
-      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
