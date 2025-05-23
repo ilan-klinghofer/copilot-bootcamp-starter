@@ -23,6 +23,10 @@ In this exercise, you will:
 
 Simply copy the exercise to your account, then wait **about 20 seconds** for the setup to complete, then **refresh the page**.
 
+> **Important:** Make sure to check the **"Include all branches"** checkbox when creating your repository. This is required for the exercise to work properly.
+>
+> ![Include all branches checkbox](/.github/assets/fork-include-branches.png)
+
 [![](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=ilan-klinghofer&template_name=copilot-bootcamp-starter&owner=%40me&name=copilot-bootcamp-agent-mode-basics&description=Exercise:+Implement+item+deletion+with+GitHub+Copilot&visibility=public)
 
 <details>
