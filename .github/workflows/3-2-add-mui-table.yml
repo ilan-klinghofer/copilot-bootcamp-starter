@@ -1,4 +1,4 @@
-name: Step 3-1 # Create component
+name: Step 3-2 # Create component
 
 on:
   push:
