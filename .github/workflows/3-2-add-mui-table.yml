@@ -1,4 +1,4 @@
-name: Step 3-1 # Create table component
+name: Step 3-1 # Create component
 
 on:
   push:
@@ -11,7 +11,7 @@ permissions:
   issues: write
 
 env:
-  STEP_3_FILE: ".github/steps/3-1-delete.md"
+  STEP_2_FILE: ".github/steps/3-x-review.md"
 
 jobs:
   find_exercise:
@@ -46,13 +46,13 @@ jobs:
 
       # START: Check practical exercise
 
-      - name: Check for table component
-        id: check-table-component
+      - name: Check for MUI table implementation
+        id: check-mui-table
         continue-on-error: true
         uses: skills/action-keyphrase-checker@v1
         with:
           text-file: packages/frontend/src/App.js
-          keyphrase: 'Hello World'
+          keyphrase: 'TableContainer'
           minimum-occurrences: 1
           case-sensitive: false
 
@@ -65,8 +65,8 @@ jobs:
             step_number: 1
             passed: ${{ !contains(steps.*.outcome, 'failure') }}
             results_table:
-              - description: "The text 'Hello World' should appear in the file packages/frontend/src/App.js"
-                passed: ${{ steps.check-hello-world-title.outcome == 'success' }}
+              - description: "The text 'TableContainer' should appear in the file packages/frontend/src/App.js"
+                passed: ${{ steps.check-mui-table.outcome == 'success' }}
 
       - name: Create comment - step results
         run: |
@@ -124,16 +124,22 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Create comment - watching for progress
-        run: |
-          gh issue comment "$ISSUE_URL" \
-            --body-file exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  finish_exercise:
+    name: Finish Exercise
+    needs: [find_exercise, post_review_content]
+    uses: skills/exercise-toolkit/.github/workflows/finish-exercise.yml@v0.4.0
+    with:
+      issue-url: ${{ needs.find_exercise.outputs.issue-url }}
 
-      - name: Disable current workflow and enable next one
-        run: |
-          gh workflow disable "Step 2-1"
-          gh workflow enable "Step 2-2"
+  disable_workflow:
+    name: Disable this workflow
+    needs: [find_exercise, post_review_content]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Disable current workflow
+        run: gh workflow disable "${{github.workflow}}"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,4 +1,4 @@
-name: Step 3-1 # Create vanilla component
+name: Step 3-1 # Create MUI instructions
 
 on:
   push:
@@ -11,7 +11,7 @@ permissions:
   issues: write
 
 env:
-  STEP_2_FILE: ".github/steps/3-1-delete.md"
+  STEP_3_FILE: ".github/steps/3-2-add-mui-table.md"
 
 jobs:
   find_exercise:
@@ -46,13 +46,12 @@ jobs:
 
       # START: Check practical exercise
 
-      - name: Check for vanilla component
-        id: check-vanilla-component
+      - name: Check for mui instructions
+        id: check-mui-instructions
         continue-on-error: true
         uses: skills/action-keyphrase-checker@v1
         with:
-          text-file: packages/frontend/src/App.js
-          keyphrase: 'Hello World'
+          text-file: docs/mui-guidelines.md
           minimum-occurrences: 1
           case-sensitive: false
 
@@ -65,8 +64,8 @@ jobs:
             step_number: 1
             passed: ${{ !contains(steps.*.outcome, 'failure') }}
             results_table:
-              - description: "The text 'Hello World' should appear in the file packages/frontend/src/App.js"
-                passed: ${{ steps.check-hello-world-title.outcome == 'success' }}
+              - description: "The filetext 'mui-guidelines' should exist under docs/ folder"
+                passed: ${{ steps.check-mui-instructions.outcome == 'success' }}
 
       - name: Create comment - step results
         run: |
@@ -133,7 +132,7 @@ jobs:
 
       - name: Disable current workflow and enable next one
         run: |
-          gh workflow disable "Step 2-1"
-          gh workflow enable "Step 2-2"
+          gh workflow disable "Step 3-1"
+          gh workflow enable "Step 3-2"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -128,23 +128,9 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  finish_exercise:
-    name: Finish Exercise
-    needs: [find_exercise, post_review_content]
-    uses: skills/exercise-toolkit/.github/workflows/finish-exercise.yml@v0.4.0
-    with:
-      issue-url: ${{ needs.find_exercise.outputs.issue-url }}
-
-  disable_workflow:
-    name: Disable this workflow
-    needs: [find_exercise, post_review_content]
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Disable current workflow
-        run: gh workflow disable "${{github.workflow}}"
+      - name: Disable current workflow and enable next one
+        run: |
+          gh workflow disable "Step 2-2"
+          gh workflow enable "Step 3-1"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
