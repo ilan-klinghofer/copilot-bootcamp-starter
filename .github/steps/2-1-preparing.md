@@ -59,7 +59,7 @@ Now, let's use GitHub Copilot's Agent Mode to change the application title:
 1. At the bottom of the Copilot panel, in the 'Ask Copilot' text box, click on the dropdown menu (next to the send button) and select **Agent** mode.
 
 1. In the same dropdown menu, click the model selector (it might say "GPT-4o" or another model name) and select **Claude 3.7 Sonnet** from the list.
-   - *If you don't see a model selector dropdown, first type something into the GitHub Copilot chat to initialize Copilot*
+   - **IMPORTANT: If you don't see a model selector dropdown, first type something into the GitHub Copilot chat to initialize Copilot**
 
 1. In the Copilot chat input field at the bottom of the panel, type the following prompt:
    
