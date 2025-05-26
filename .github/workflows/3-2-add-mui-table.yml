@@ -3,7 +3,7 @@ name: Step 3-1 # Create component
 on:
   push:
     branches:
-      - feature/lesson-3
+      - main
 
 permissions:
   contents: read
