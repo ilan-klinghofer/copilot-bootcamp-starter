@@ -64,7 +64,7 @@ jobs:
             step_number: 1
             passed: ${{ !contains(steps.*.outcome, 'failure') }}
             results_table:
-              - description: "The filetext 'mui-guidelines' should exist under docs/ folder"
+              - description: "The file 'mui-guidelines.md' should exist under `docs/` folder"
                 passed: ${{ steps.check-mui-instructions.outcome == 'success' }}
 
       - name: Create comment - step results
