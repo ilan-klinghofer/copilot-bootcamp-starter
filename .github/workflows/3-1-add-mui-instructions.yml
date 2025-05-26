@@ -54,6 +54,7 @@ jobs:
           text-file: docs/mui-guidelines.md
           minimum-occurrences: 1
           case-sensitive: false
+          keyphrase: '@mui/material'
 
       - name: Build message - step results
         id: build-message-step-results
