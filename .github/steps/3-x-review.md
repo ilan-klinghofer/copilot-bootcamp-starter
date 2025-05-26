@@ -1,6 +1,6 @@
 ## Review
 
-_Congratulations, you've completed session 2 of the Copilot Bootcamp tutorial and learned a lot about GitHub Copilot!_
+_Congratulations, you've completed session 3 of the Copilot Bootcamp tutorial and learned a lot about GitHub Copilot!_
 
 <img src="https://octodex.github.com/images/jetpacktocat.png" alt=celebrate width=200 align=right>
 
@@ -13,8 +13,8 @@ Here's a recap of your accomplishments:
 
 ### What's next?
 
-- Session 3
-  - Instructions files and documentation
+- Session 4
+  - Gain an understanding of how agent mode can write and run your tests for you effectively
 - Continue working on this project
   - Use Copilot to add filtering functionality for the items list
   - Implement item editing capabilities
