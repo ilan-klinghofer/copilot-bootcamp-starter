@@ -12,6 +12,7 @@ permissions:
 
 env:
   REVIEW_FILE: ".github/steps/2-x-review.md"
+  NEXT_REVIEW_FILE: ".github/steps/3-1-add-mui-instructions.md"
 
 jobs:
   find_exercise:
@@ -134,6 +135,13 @@ jobs:
         run: |
           gh issue comment "$ISSUE_URL" \
             --body-file "$REVIEW_FILE"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create comment - add step content
+        run: |
+          gh issue comment "$ISSUE_URL" \
+            --body-file "$NEXT_REVIEW_FILE"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
