@@ -62,7 +62,7 @@ jobs:
         with:
           template-file: exercise-toolkit/markdown-templates/step-feedback/step-results-table.md
           template-vars: |
-            step_number: 3-1
+            step_number: 3-2
             passed: ${{ !contains(steps.*.outcome, 'failure') }}
             results_table:
               - description: "The file 'mui-guidelines.md' should exist under `docs/` folder"
