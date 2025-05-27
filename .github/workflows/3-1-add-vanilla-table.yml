@@ -65,7 +65,7 @@ jobs:
             step_number: 3-1
             passed: ${{ !contains(steps.*.outcome, 'failure') }}
             results_table:
-              - description: "The file 'mui-guidelines.md' should exist under `docs/` folder"
+              - description: "The `App.js` file should be updated to include an HTML table."
                 passed: ${{ steps.check-vanilla-table-component.outcome == 'success' }}
 
       - name: Create comment - step results
