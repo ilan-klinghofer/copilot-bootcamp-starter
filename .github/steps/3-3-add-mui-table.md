@@ -13,7 +13,7 @@ Let's add the component library to our application. This will add the appropriat
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
    > ```prompt
-   > Convert our item-section to a MUI table
+   > Convert our item-section to a table
    > ```
 
 3. Copilot will analyze your codebase and implement:
