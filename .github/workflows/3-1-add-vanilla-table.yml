@@ -54,7 +54,7 @@ jobs:
           text-file: packages/frontend/src/App.js
           minimum-occurrences: 1
           case-sensitive: false
-          keyphrase: 'table'
+          keyphrase: '<table'
 
       - name: Build message - step results
         id: build-message-step-results
