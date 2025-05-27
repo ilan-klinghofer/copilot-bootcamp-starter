@@ -14,7 +14,7 @@ Let's add the component library to our application. This will add the appropriat
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
    > ```prompt
-   > Add a new instructions file to use MUI called mui-guidelines.md
+   > Add a new instructions file to use MUI called mui-guidelines.md and update copilot-instructions.md to reference it
    > ```
 
 3. Copilot will analyze your codebase and implement:
