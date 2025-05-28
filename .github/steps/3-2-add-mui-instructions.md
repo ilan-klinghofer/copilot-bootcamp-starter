@@ -25,7 +25,7 @@ Let's add the component library to our application. This will add the appropriat
    - `mui-guidelines.md` was created
    - `copilot-instructions.md` was updated
 
-5. Run the application with `npm run dev` in the root directory to test the new functionality.
+5. Run the application with `npm run start` in the root directory to test the new functionality.
 
 ### Success Criteria
 

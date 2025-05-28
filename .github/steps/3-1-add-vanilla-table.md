@@ -22,7 +22,7 @@ We will first create a table without explicitly instructing copilot to use the M
 4. When Copilot finishes making the changes, review what was modified:
    - `App.js`
 
-5. Run the application with `npm run dev` in the root directory to test the new functionality.
+5. Run the application with `npm run start` in the root directory to test the new functionality.
 
 ### Success Criteria
 

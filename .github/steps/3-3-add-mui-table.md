@@ -17,7 +17,7 @@ Let's add the component library to our application. This will add the appropriat
    > ```
 
 3. Copilot will analyze your codebase and implement:
-   - updating `package.json` to add and install MUI depdendencies
+   - updating `package.json` to add and install MUI dependencies
    - update `App.js` to import MUI libraries
    - convert the section component to use a `TableContainer`
 
@@ -25,7 +25,7 @@ Let's add the component library to our application. This will add the appropriat
    - `package.json`
    - `App.js`
 
-5. Run the application with `npm run dev` in the root directory to test the new functionality.
+5. Run the application with `npm run start` in the root directory to test the new functionality.
 
 ### Success Criteria
 
