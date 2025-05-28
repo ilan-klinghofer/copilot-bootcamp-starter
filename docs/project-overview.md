@@ -33,13 +33,13 @@ The project follows a monorepo architecture with the following structure:
 ### Installation
 1. Clone the repository
 2. Run `npm install` at the root of the project to install all dependencies
-3. Start the development environment using `npm run dev`
+3. Start the development environment using `npm run start`
 
 ## Development Workflow
 
 The project uses npm workspaces to manage the monorepo structure. You can:
 
-- Run `npm run dev` from the root to start both frontend and backend in development mode
+- Run `npm run start` from the root to start both frontend and backend in development mode
 - Run `npm test` from the root to run tests for all packages
 - Work on individual packages by navigating to their directories and using their specific scripts
 
