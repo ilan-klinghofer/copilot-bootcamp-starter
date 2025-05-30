@@ -8,7 +8,7 @@ We will first create a table without explicitly instructing copilot to use the M
 
 1. Open the **Copilot** chat panel and switch to **Agent** mode using the dropdown menu.
 
-2. Use the following prompt to ask Copilot to add the MUI instructions and update appropriate documentation:
+2. Use the following prompt to ask Copilot to convert the existing item section to a vanilla HTML table:
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
@@ -27,7 +27,7 @@ We will first create a table without explicitly instructing copilot to use the M
 ### Success Criteria
 
 To complete this exercise successfully, ensure that:
-   - `App.js` was updated
+   - `App.js` was updated with a vanilla HTML `table` implementation
 
 If you encounter any issues, you can:
 - Ask Copilot to fix specific problems
