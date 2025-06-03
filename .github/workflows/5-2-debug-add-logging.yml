@@ -1,4 +1,4 @@
-name: Step 5-5 # Debug - Fix runtime errors
+name: Step 5-2 # Debug - Add Logging
 
 on:
   push:
@@ -12,7 +12,7 @@ permissions:
   issues: write
 
 env:
-  NEXT_MARKDOWN_FILE: ".github/steps/5-6-convert-to-typescript.md"
+  NEXT_MARKDOWN_FILE: ".github/steps/5-3-debug-fix-runtime-errors.md"
 
 jobs:
   find_exercise:
@@ -50,7 +50,7 @@ jobs:
         with:
           template-file: exercise-toolkit/markdown-templates/step-feedback/step-finished-prepare-next-step.md
           template-vars: |
-            next_step_number: 5-6
+            next_step_number: 5-3
 
       - name: Update comment - step finished
         run: |
@@ -94,9 +94,9 @@ jobs:
 
       - name: Disable current workflow and enable next one
         run: |
-          if gh workflow disable "Step 5-5" 2>/dev/null; then
-            echo "Workflow 'Step 5-5' disabled successfully"
+          if gh workflow disable "Step 5-2" 2>/dev/null; then
+            echo "Workflow 'Step 5-2' disabled successfully"
           fi
-          gh workflow enable "Step 5-6"
+          gh workflow enable "Step 5-3"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
