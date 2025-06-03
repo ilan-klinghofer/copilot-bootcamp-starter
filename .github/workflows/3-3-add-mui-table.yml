@@ -118,6 +118,13 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Create comment - add step content
+        run: |
+          gh issue comment "$ISSUE_URL" \
+            --body-file "$NEXT_LESSON_FILE"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Disable current workflow and enable only step one of the next lesson
         run: |
           if gh workflow disable "Step 3-3" 2>/dev/null; then
@@ -138,13 +145,6 @@ jobs:
           if gh workflow disable "Step 5-6" 2>/dev/null; then
             echo "Workflow 'Step 5-6' disabled successfully"
           fi
-          gh workflow enable "Step 5-1"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Create comment - add step content
-        run: |
-          gh issue comment "$ISSUE_URL" \
-            --body-file "$NEXT_LESSON_FILE"
+          gh workflow enable "Step 5-1" 2>/dev/null
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
