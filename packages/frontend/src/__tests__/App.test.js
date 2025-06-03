@@ -37,6 +37,23 @@ const server = setupServer(
         created_at: new Date().toISOString(),
       })
     );
+  }),
+  
+  // DELETE /api/items/:id handler
+  rest.delete('/api/items/:id', (req, res, ctx) => {
+    const { id } = req.params;
+    
+    if (id === '1' || id === '2') {
+      return res(
+        ctx.status(200),
+        ctx.json({ message: 'Item deleted successfully' })
+      );
+    }
+    
+    return res(
+      ctx.status(404),
+      ctx.json({ error: 'Item not found' })
+    );
   })
 );
 
@@ -50,7 +67,7 @@ describe('App Component', () => {
     await act(async () => {
       render(<App />);
     });
-    expect(screen.getByText('React Frontend with Node Backend')).toBeInTheDocument();
+    expect(screen.getByText('Hello World')).toBeInTheDocument();
     expect(screen.getByText('Connected to in-memory database')).toBeInTheDocument();
   });
 
@@ -113,6 +130,65 @@ describe('App Component', () => {
     // Wait for error message
     await waitFor(() => {
       expect(screen.getByText(/Failed to fetch data/)).toBeInTheDocument();
+    });
+  });
+
+  test('deletes an item', async () => {
+    const user = userEvent.setup();
+    
+    await act(async () => {
+      render(<App />);
+    });
+    
+    // Wait for items to load
+    await waitFor(() => {
+      expect(screen.getByText('Test Item 1')).toBeInTheDocument();
+      expect(screen.getByText('Test Item 2')).toBeInTheDocument();
+    });
+    
+    // Find and click the delete button for the first item
+    const deleteButtons = screen.getAllByLabelText(/Delete Test Item/);
+    await act(async () => {
+      await user.click(deleteButtons[0]);
+    });
+    
+    // The item should be removed from the UI
+    await waitFor(() => {
+      expect(screen.queryByText('Test Item 1')).not.toBeInTheDocument();
+    });
+    
+    // The second item should still be there
+    expect(screen.getByText('Test Item 2')).toBeInTheDocument();
+  });
+
+  test('handles delete error', async () => {
+    const user = userEvent.setup();
+    
+    // Override the delete handler to simulate an error
+    server.use(
+      rest.delete('/api/items/:id', (req, res, ctx) => {
+        return res(ctx.status(500));
+      })
+    );
+    
+    await act(async () => {
+      render(<App />);
+    });
+    
+    // Wait for items to load
+    await waitFor(() => {
+      expect(screen.getByText('Test Item 1')).toBeInTheDocument();
+    });
+    
+    // Try to delete an item
+    const deleteButtons = screen.getAllByLabelText(/Delete Test Item/);
+    await act(async () => {
+      await user.click(deleteButtons[0]);
+    });
+    
+    // Should show error message
+    await waitFor(() => {
+      expect(screen.getByText(/Error deleting item/)).toBeInTheDocument();
     });
   });
 
