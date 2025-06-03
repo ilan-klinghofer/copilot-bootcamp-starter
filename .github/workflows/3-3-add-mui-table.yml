@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -12,6 +13,7 @@ permissions:
 
 env:
   REVIEW_FILE: ".github/steps/3-x-review.md"
+  NEXT_LESSON_FILE: ".github/steps/5-1-checkout-code-refactoring.md"
 
 jobs:
   find_exercise:
@@ -116,22 +118,33 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  finish_exercise:
-    name: Finish Exercise
-    needs: [find_exercise, post_review_content]
-    uses: skills/exercise-toolkit/.github/workflows/finish-exercise.yml@v0.4.0
-    with:
-      issue-url: ${{ needs.find_exercise.outputs.issue-url }}
+      - name: Create comment - add step content
+        run: |
+          gh issue comment "$ISSUE_URL" \
+            --body-file "$NEXT_LESSON_FILE"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  disable_workflow:
-    name: Disable this workflow
-    needs: [find_exercise, post_review_content]
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Disable current workflow
-        run: gh workflow disable "${{github.workflow}}"
+      - name: Disable current workflow and enable only step one of the next lesson
+        run: |
+          if gh workflow disable "Step 3-3" 2>/dev/null; then
+            echo "Workflow 'Step 3-3' disabled successfully"
+          fi
+          if gh workflow disable "Step 5-2" 2>/dev/null; then
+            echo "Workflow 'Step 5-2' disabled successfully"
+          fi
+          if gh workflow disable "Step 5-3" 2>/dev/null; then
+            echo "Workflow 'Step 5-3' disabled successfully"
+          fi
+          if gh workflow disable "Step 5-4" 2>/dev/null; then
+            echo "Workflow 'Step 5-4' disabled successfully"
+          fi
+          if gh workflow disable "Step 5-5" 2>/dev/null; then
+            echo "Workflow 'Step 5-5' disabled successfully"
+          fi
+          if gh workflow disable "Step 5-6" 2>/dev/null; then
+            echo "Workflow 'Step 5-6' disabled successfully"
+          fi
+          gh workflow enable "Step 5-1" 2>/dev/null || true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
