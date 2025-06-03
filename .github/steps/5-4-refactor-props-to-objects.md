@@ -1,6 +1,6 @@
-### :keyboard: Activity: Debugging - Add Logging
+### :keyboard: Activity: Refactoring (part 1 - converting long parameter lists to objects)
 
-In this step, you'll use GitHub Copilot's Agent mode to add logging to some preexisting code to enable better debugging in future steps.
+In this step, you'll use GitHub Copilot's Agent mode to refactor some preexisting code that needs some simplification of method calls with long input parameter lists. Now that the debugging issues are resolved, we can safely refactor the code.
 
 1. Open the **Copilot** chat panel, switch to **Agent** mode and **Claude 3.7 Sonnet** model using the dropdown menus.
 
@@ -9,11 +9,11 @@ In this step, you'll use GitHub Copilot's Agent mode to add logging to some pree
    2. `file2.js`
    3. `file3.js`
 
-3. Use the following prompt to ask Copilot to refactor the code for improved logging:
+3. Use the following prompt to ask Copilot to refactor the code for simplifying input parameters:
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
    > ```prompt
-   > Refactor my code in the attached files by adding logging to help with debugging and code maintainability.
+   > Refactor my code in the attached files by removing long input parameter lists with objects instead. Only refactor the code in the attached to this context.
    > ```
    
 4. Run the application with `npm run start` in the root directory to test the functionality.
@@ -22,7 +22,7 @@ In this step, you'll use GitHub Copilot's Agent mode to add logging to some pree
 
 To complete this exercise successfully, ensure that:
    - Code changes are commited to the `feature/code-refactoring` branch.
-   - More console logging is added for the specified files.
+   - All input parameters are converted to objects in the specified files.
 
 If you encounter any issues, you can:
 - Double check that the pushed branch is called `feature/code-refactoring`
