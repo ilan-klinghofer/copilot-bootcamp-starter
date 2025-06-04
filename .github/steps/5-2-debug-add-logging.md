@@ -12,18 +12,6 @@ In this step, you'll use GitHub Copilot's Agent mode to add logging to some pree
    5. `packages/backend/src/app.js`
 
 3. :pencil2: Enter a prompt to get GitHub Copilot to create logging statements to help with debugging the existing errors. Observe and interact with GitHub Copilot as prompts appear to perform actions or request more information. :pencil2:
-   <details>
-
-   <summary> :warning: Try creating your own prompt before viewing</summary>
-
-      Use the following prompt to ask Copilot to refactor the code for improved logging:
-      > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
-      >
-      > ```prompt
-      > Refactor my code in the attached files by adding basic console logging to help with debugging and code maintainability.
-      > ```
-
-   </details>
    
 4. :construction: Run the application with `npm run start` in the root directory to observe current state of the application. :construction:
    1. If the app is broken, this is intended as we will soon be having GitHub Copilot help fix compilation and runtime errors. As we only asked GitHub Copilot to add logging it should not have resolved most or any of the issues.
