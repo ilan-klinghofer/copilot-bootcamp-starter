@@ -61,11 +61,9 @@ Now, let's use GitHub Copilot's Agent Mode to change the application title:
 1. In the same dropdown menu, click the model selector (it might say "GPT-4o" or another model name) and select **Claude 3.7 Sonnet** from the list.
    - **IMPORTANT: If you don't see a model selector dropdown, first type something into the GitHub Copilot chat to initialize Copilot**
 
-1. In the Copilot chat input field at the bottom of the panel, type the following prompt:
-   
-   ```
-   Change the title of the main screen from "React Frontend with Node Backend" to "Hello World"
-   ```
+1. In the Copilot chat input field at the bottom of the panel, use your own words to ask Copilot to change the title of the main screen from "React Frontend with Node Backend" to "Hello World".
+   - For example, you might say: _"Update the app title to Hello World"_ or _"Change the main screen title to Hello World instead of React Frontend with Node Backend"_.
+   - The exact wording is up to you—just make sure your intent is clear!
 
 1. Press Enter and allow Copilot Agent to analyze the codebase and make the necessary changes.
 
