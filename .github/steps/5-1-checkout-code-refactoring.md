@@ -12,14 +12,16 @@ But first we will need to check out some poorly written code that needs some fix
 
 1. :arrow_down: Checkout the branch `lesson-5-start` :arrow_down:
 
-2. :pencil2: Create a new branch off this branch called `feature/code-refactoring`. :pencil2:
+2. :arrow_down: Install npm dependencies for this checked out branch `npm run install:all`
+
+3. :pencil2: Create a new branch off this branch called `feature/code-refactoring`. :pencil2:
    
    :exclamation: IMPORTANT: Branch needs to be exactly as specified or you will not be able to continue.
 
-3. :arrow_up: Push branch `feature/code-refactoring`. :arrow_up:
-4. :construction: Run the application with `npm run start` in the root directory to observe current state of the application. :construction:
+4. :arrow_up: Push branch `feature/code-refactoring`. :arrow_up:
+5. :construction: Run the application with `npm run start` in the root directory to observe current state of the application. :construction:
    1. If the app is broken, this is intended as we will soon be having GitHub Copilot help fix compilation and runtime errors.
-5. :construction: Run unit tests `npm run test` in the root directory to run frontend and backend unit tests :construction:
+6. :construction: Run unit tests `npm run test` in the root directory to run frontend and backend unit tests :construction:
 
 ### Success Criteria
 
