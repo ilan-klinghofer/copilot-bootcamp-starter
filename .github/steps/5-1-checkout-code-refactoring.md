@@ -12,7 +12,7 @@ But first we will need to check out some poorly written code that needs some fix
 
 1. :arrow_down: Checkout the branch `lesson-5-start` :arrow_down:
 
-2. :arrow_down: Install npm dependencies for this checked out branch `npm run install:all`
+2. :arrow_down: Install npm dependencies for this checked out branch `npm run install:all` :arrow_down:
 
 3. :pencil2: Create a new branch off this branch called `feature/code-refactoring`. :pencil2:
    

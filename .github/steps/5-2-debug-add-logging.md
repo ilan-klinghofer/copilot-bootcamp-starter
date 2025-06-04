@@ -4,7 +4,7 @@ In this step, you'll use GitHub Copilot's Agent mode to add logging to some pree
 
 1. Open the **Copilot** chat panel, switch to **Agent** mode and **Claude 3.7 Sonnet** model using the dropdown menus.
 
-2. :paperclip: Attach the following files to the GitHub Copilot Chat context window to include for code refactoring :paperclip:
+2. :paperclip: Attach the following files to the GitHub Copilot Chat context window to include for code refactoring :paperclip: 
    1. `packages/frontend/src/components/ItemDetails.js`
    2. `packages/frontend/src/utils/ItemService.js`
    3. `packages/backend/src/controllers/ItemDetailsController.js`
