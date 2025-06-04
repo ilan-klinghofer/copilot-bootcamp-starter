@@ -9,6 +9,7 @@ Here's a recap of your accomplishments:
 - Set up your GitHub Codespace development environment
 - Used GitHub Copilot Agent Mode with Claude 3.7 Sonnet to modify application content
 - Implemented delete functionality across both frontend and backend components
+- Set up linting for the project
 - Learned how to use Copilot to handle complex, multi-step coding tasks
 
 ### What's next?
