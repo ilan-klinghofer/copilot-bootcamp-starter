@@ -20,7 +20,9 @@ In this step, you'll use GitHub Copilot's Agent mode to refactor some preexistin
 
 5. :mag: Check if the code has been refactored to your specification (long parameters lists are converted to objects)
 
-6. :white_check_mark: When everything succeeds, commit all changes and push branch `feature/code-refactoring` up.
+6. :repeat: If the codebase has not yet been refactored or something is now broken, keep asking GitHub Copilot to refactor anything missed or resolve issues observed.
+
+7. :white_check_mark: When everything succeeds, commit all changes and push branch `feature/code-refactoring` up.
 
 ### Success Criteria
 
