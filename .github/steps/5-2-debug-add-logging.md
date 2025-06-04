@@ -17,6 +17,8 @@ In this step, you'll use GitHub Copilot's Agent mode to add logging to some pree
    1. If the app is broken, this is intended as we will soon be having GitHub Copilot help fix compilation and runtime errors. As we only asked GitHub Copilot to add logging it should not have resolved most or any of the issues.
 5. :construction: Run unit tests `npm run test` in the root directory to run frontend and backend unit tests :construction:
 
+6. :white_check_mark: Commit all changes and push branch `feature/code-refactoring` up.
+
 ### Success Criteria
 
 To complete this exercise successfully, ensure that:

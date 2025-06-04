@@ -16,14 +16,18 @@ In this step, you'll use GitHub Copilot's Agent mode to fix some runtime errors.
    | Type of Context | Example |
    | - | - |
    | Error messages | `Uncaught ReferenceError: undefinedObject is not defined at <anonymous>1:1 ...` |
-   | Type of Error | `... the following error observed in the browser console ...`
+   | Type of Error | `... the following error observed in the browser console / CLI / unit tests ...`
    | Situation | `When I click on this section in the UI... such and such happens / <paste error> ...` |
    
-4. :white_check_mark: Run the application with `npm run start` in the root directory to test the functionality.
+4. :mag: Run the application with `npm run start` in the root directory to test the functionality.
    
    The end goal is to have the application compiling successfully and with the application functioning in terms of viewing, adding, editing, and deleting items.
 
-5. :repeat: If the application is still erroring out, keep asking GitHub Copilot to resolve issues observed in the CLI terminal and browser console logs and paste specific error messages so it has the appropriate context.
+5. :mag: Run the unit tests with `npm run test` in the root directory. All unit tests should continue to pass.
+
+6. :repeat: If the application is still erroring out, keep asking GitHub Copilot to resolve issues observed in the CLI terminal and browser console logs and paste specific error messages so it has the appropriate context.
+
+7. :white_check_mark: When everything succeeds, commit all changes and push branch `feature/code-refactoring` up.
 
 ### Success Criteria
 
