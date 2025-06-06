@@ -16,7 +16,7 @@ In this step, you'll use GitHub Copilot's Agent mode to refactor some preexistin
 4. :mag: Run the application with `npm run start` in the root directory to test the functionality.
    
    - All functionality should continue to work
-   - All unit tests `npm run start` should continue to work
+   - All unit tests `npm run test` should continue to work
 
 5. :mag: Check if the code has been refactored to your specification (long parameters lists are converted to objects)
 
