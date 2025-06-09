@@ -4,9 +4,10 @@ In this exercise, you'll use GitHub Copilot's Agent mode to all existing unit te
 
 ### :keyboard: Activity: Delete the backend unit tests
 
+1. :pencil2: Create a new branch called `feature/test` based off of your `feature/mui` branch. :pencil2:
 1. Open the File Explorer and navigate to packages/backend/__tests__
-2. Right click on the app.test.js and select Delete
-3. Select 'Move to Recycle Bin' in the confirmation window
+1. Right click on the app.test.js and select Delete
+1. Select 'Move to Recycle Bin' in the confirmation window
 
 ### :keyboard: Activity: Delete the frontend unit tests
 
@@ -30,9 +31,11 @@ In this exercise, you'll use GitHub Copilot's Agent mode to all existing unit te
 ### Success Criteria
 
 To complete this exercise successfully:
+- A new `feature/test` branch is pushed based on the branch `feature/mui`
 - The packages/backend/__tests__/app.test.js should be empty
 - The packages/backend/src/__tests__/App.test.js folder should be empty
 
 If you encounter any issues, you can:
+- Double check that the newly pushed branch is called `feature/test`
 - Ask Copilot to fix specific problems
 - Check the developer console for any errors
