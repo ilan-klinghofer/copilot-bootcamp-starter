@@ -3,7 +3,8 @@ name: Step 3-1 # Create vanilla table
 on:
   push:
     branches:
-      - main
+      - feature/mui
+  workflow_dispatch:
 
 permissions:
   contents: read

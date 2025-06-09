@@ -32,7 +32,7 @@ Let's add linting to our project using ESLint and Prettier. This will involve up
 
    - For example, you might say: _"Run the linter and fix all lint errors in the project"_ or _"Execute npm run lint:fix to resolve linting issues automatically"_.
 
-1. Commit and push your changes to the main branch.
+1. Commit and push your changes to the `feature/intro` branch.
 
 ## Success Criteria
 

@@ -3,7 +3,7 @@ name: Step 3-3 # Verify Add MUI table
 on:
   push:
     branches:
-      - main
+      - feature/mui
   workflow_dispatch:
 
 permissions:
