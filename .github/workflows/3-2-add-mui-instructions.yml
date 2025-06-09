@@ -3,7 +3,8 @@ name: Step 3-2 # Create MUI instructions
 on:
   push:
     branches:
-      - main
+      - feature/mui
+  workflow_dispatch:
 
 permissions:
   contents: read

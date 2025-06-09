@@ -34,7 +34,7 @@ Let's add the ability to delete items from our application. This will require ch
 
 1. Keep the changes that copilot implemented.
 
-1. Commit and push to the main branch.
+1. Commit and push to the `feature/intro` branch.
 
 ### Success Criteria
 
