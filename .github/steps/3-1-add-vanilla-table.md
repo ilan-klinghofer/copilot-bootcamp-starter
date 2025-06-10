@@ -6,7 +6,7 @@ In this exercise, you'll use GitHub Copilot's Agent mode to add React's componen
 
 We will first create a table without explicitly instructing copilot to use the MUI component library.
 
-3. :pencil2: Create a new branch called `feature/mui` based off of your `feature/intro` branch. :pencil2:
+1. :pencil2: Create a new branch called `feature/mui` based off of your `feature/intro` branch. :pencil2:
 
 1. Open the **Copilot** chat panel and switch to **Agent** mode using the dropdown menu.
 
