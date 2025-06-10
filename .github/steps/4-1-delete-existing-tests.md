@@ -1,4 +1,4 @@
-# Welcome to the Copilot Bootcamp Lesson 4 - Testing with GitHub CoPilot! In this first step, you'll delete all existing unit tests.
+# Welcome to the Copilot Bootcamp Lesson 4 - Testing with GitHub CoPilot! In this first step, you'll remove all existing unit tests.
 
 In this exercise, you'll use GitHub Copilot's Agent mode to all existing unit tests.
 
@@ -25,7 +25,7 @@ In this exercise, you'll use GitHub Copilot's Agent mode to all existing unit te
 
 1. Keep the changes that copilot implemented.
 
-1. Commit and push to the main branch.
+1. Commit and push to the `feature/test` branch.
 
 
 ### Success Criteria

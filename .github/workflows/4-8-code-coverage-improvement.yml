@@ -47,7 +47,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '20'
           cache: 'npm'
 
       - name: Install dependencies
@@ -210,5 +210,10 @@ jobs:
         run: |
           gh workflow disable "Step 4-8"
           gh workflow enable "Step 5-1"
+          gh workflow disable "Step 5-2"
+          gh workflow disable "Step 5-3"
+          gh workflow disable "Step 5-4"
+          gh workflow disable "Step 5-5"
+          gh workflow disable "Step 5-6"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

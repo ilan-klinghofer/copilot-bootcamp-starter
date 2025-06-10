@@ -21,7 +21,7 @@ Let's add the frontend unit tests for the delete functionality created in the pr
 
 1. Keep the changes that copilot implemented.
 
-1. Commit and push to the main branch.
+1. Commit and push to the `feature/test` branch.
 
 ### Success Criteria
 

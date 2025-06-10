@@ -25,7 +25,7 @@ Let's update the backend unit tests for the delete api created in the previous l
 
 1. Keep the changes that copilot implemented.
 
-1. Commit and push to the main branch.
+1. Commit and push to the `feature/test` branch.
 
 ### Success Criteria
 
