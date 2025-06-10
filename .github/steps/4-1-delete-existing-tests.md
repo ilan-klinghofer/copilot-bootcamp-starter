@@ -1,4 +1,4 @@
-# Welcome to the Copilot Bootcamp Lesson 4 - Testing with GitHub CoPilot! In this first step, you'll remove all existing unit tests.
+# Welcome to the Copilot Bootcamp Lesson 4 - Testing with GitHub Copilot! In this first step, you'll remove all existing unit tests.
 
 In this exercise, you'll use GitHub Copilot's Agent mode to all existing unit tests.
 
