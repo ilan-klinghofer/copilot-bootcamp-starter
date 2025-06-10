@@ -54,6 +54,8 @@ Having a consistent development environment ensures all bootcamp participants ha
 
 Now, let's use GitHub Copilot's Agent Mode to change the application title:
 
+3. :pencil2: Create a new branch called `feature/intro`. :pencil2:
+
 1. In VS Code, open Github Copilot.
 
 1. At the bottom of the Copilot panel, in the 'Ask Copilot' text box, click on the dropdown menu (next to the send button) and select **Agent** mode.
@@ -71,13 +73,22 @@ Now, let's use GitHub Copilot's Agent Mode to change the application title:
 
 1. Review the changes made by Copilot and select 'Keep' for each change, or press the 'Keep' button in the copilot sidebar to accept all changes.
 
-1. Commit and push your changes to the main branch
+1. :arrow_up: Commit and push your changes to the `feature/intro` branch :arrow_up:
 
 1. Now that your changes are pushed to GitHub, Mona should already be busy checking your work. Give her a moment and keep watch in the comments. You will see her respond with progress info and the next lesson.
+
+### Success Criteria
+
+To complete this exercise successfully, ensure that:
+   - A new `feature/intro` branch is pushed
+
+If you encounter any issues, you can:
+- Double check that the newly pushed branch is called `feature/intro`
+- Ask Copilot to fix specific problems
 
 ### :bulb: Tip: Making the most of Codespaces
 
 - You can customize your codespace by adjusting VS Code settings
 - The terminal is fully functional and supports all standard commands
 - Changes are automatically saved to your codespace
-- If you close your browser, your codespace will still be available when you return
+- If you close your browser, your codespace will still be available when you return.
