@@ -15,13 +15,9 @@ Let's add the ability to delete items from our application. This will require ch
 
 1. Open the **Copilot** chat panel and switch to **Agent** mode using the dropdown menu.
 
-1. Use the following prompt to ask Copilot to implement the delete functionality:
-
-   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
-   >
-   > ```prompt
-   > I want the ability to delete an item
-   > ```
+1. In the Copilot chat input field, use your own words to ask Copilot to implement the ability to delete items from the app.
+   - For example, you might say: _"Add a way to delete items from the app"_ or _"Implement item deletion in both frontend and backend"_.
+   - The exact wording is up to you—just make sure your intent is clear!
 
 1. Copilot will analyze your codebase and implement:
    - A new DELETE endpoint in the backend
@@ -38,7 +34,7 @@ Let's add the ability to delete items from our application. This will require ch
 
 1. Keep the changes that copilot implemented.
 
-1. Commit and push to the main branch.
+1. Commit and push to the `feature/intro` branch.
 
 ### Success Criteria
 

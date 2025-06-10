@@ -54,6 +54,8 @@ Having a consistent development environment ensures all bootcamp participants ha
 
 Now, let's use GitHub Copilot's Agent Mode to change the application title:
 
+3. :pencil2: Create a new branch called `feature/intro`. :pencil2:
+
 1. In VS Code, open Github Copilot.
 
 1. At the bottom of the Copilot panel, in the 'Ask Copilot' text box, click on the dropdown menu (next to the send button) and select **Agent** mode.
@@ -61,11 +63,9 @@ Now, let's use GitHub Copilot's Agent Mode to change the application title:
 1. In the same dropdown menu, click the model selector (it might say "GPT-4o" or another model name) and select **Claude 3.7 Sonnet** from the list.
    - **IMPORTANT: If you don't see a model selector dropdown, first type something into the GitHub Copilot chat to initialize Copilot**
 
-1. In the Copilot chat input field at the bottom of the panel, type the following prompt:
-   
-   ```
-   Change the title of the main screen from "React Frontend with Node Backend" to "Hello World"
-   ```
+1. In the Copilot chat input field at the bottom of the panel, use your own words to ask Copilot to change the title of the main screen from "React Frontend with Node Backend" to "Hello World".
+   - For example, you might say: _"Update the app title to Hello World"_ or _"Change the main screen title to Hello World instead of React Frontend with Node Backend"_.
+   - The exact wording is up to you—just make sure your intent is clear!
 
 1. Press Enter and allow Copilot Agent to analyze the codebase and make the necessary changes.
 
@@ -73,13 +73,22 @@ Now, let's use GitHub Copilot's Agent Mode to change the application title:
 
 1. Review the changes made by Copilot and select 'Keep' for each change, or press the 'Keep' button in the copilot sidebar to accept all changes.
 
-1. Commit and push your changes to the main branch
+1. :arrow_up: Commit and push your changes to the `feature/intro` branch :arrow_up:
 
 1. Now that your changes are pushed to GitHub, Mona should already be busy checking your work. Give her a moment and keep watch in the comments. You will see her respond with progress info and the next lesson.
+
+### Success Criteria
+
+To complete this exercise successfully, ensure that:
+   - A new `feature/intro` branch is pushed
+
+If you encounter any issues, you can:
+- Double check that the newly pushed branch is called `feature/intro`
+- Ask Copilot to fix specific problems
 
 ### :bulb: Tip: Making the most of Codespaces
 
 - You can customize your codespace by adjusting VS Code settings
 - The terminal is fully functional and supports all standard commands
 - Changes are automatically saved to your codespace
-- If you close your browser, your codespace will still be available when you return
+- If you close your browser, your codespace will still be available when you return.

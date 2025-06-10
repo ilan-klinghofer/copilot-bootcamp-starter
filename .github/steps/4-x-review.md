@@ -1,6 +1,6 @@
 ## Review
 
-_Congratulations, you've completed session 2 of the Copilot Bootcamp tutorial and learned a lot about GitHub Copilot!_
+_Congratulations, you've completed session 3 of the Copilot Bootcamp tutorial and learned a lot about GitHub Copilot!_
 
 <img src="https://octodex.github.com/images/jetpacktocat.png" alt=celebrate width=200 align=right>
 
@@ -9,13 +9,15 @@ Here's a recap of your accomplishments:
 - Set up your GitHub Codespace development environment
 - Used GitHub Copilot Agent Mode with Claude 3.7 Sonnet to modify application content
 - Implemented delete functionality across both frontend and backend components
-- Set up linting for the project
-- Learned how to use Copilot to handle complex, multi-step coding tasks
+- Implemented 
+- Added, updated & troubleshooted frontend and backend unit tests
+- Implemented integration tests
+- Implemented e2e tests using Playwright
 
 ### What's next?
 
-- Session 3
-  - Instructions files and documentation
+- Session 5
+  - Gain an understanding of how agent mode can help with refactoring and debugging your code
 - Continue working on this project
   - Use Copilot to add filtering functionality for the items list
   - Implement item editing capabilities

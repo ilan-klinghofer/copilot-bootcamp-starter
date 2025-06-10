@@ -1,18 +1,15 @@
-name: Step 3-1 # Create vanilla table
+name: Step 4-7 # End-to-End Tests
 
 on:
   push:
     branches:
-      - feature/mui
+      - feature/test
   workflow_dispatch:
 
 permissions:
   contents: read
   actions: write
   issues: write
-
-env:
-  STEP_3_FILE: ".github/steps/3-2-add-mui-instructions.md"
 
 jobs:
   find_exercise:
@@ -47,15 +44,64 @@ jobs:
 
       # START: Check practical exercise
 
-      - name: Check for vanilla table implementation
-        id: check-vanilla-table-component
-        continue-on-error: true
-        uses: skills/action-keyphrase-checker@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          text-file: packages/frontend/src/App.js
-          minimum-occurrences: 1
-          case-sensitive: false
-          keyphrase: '<table'
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Check for Playwright installation
+      - name: Check for Playwright installation
+        id: check-playwright-installed
+        continue-on-error: true
+        run: |
+          if [ -f "playwright.config.js" ] || [ -f "packages/frontend/playwright.config.js" ]; then
+            exit 0
+          fi
+          if grep -q "playwright" package.json || grep -q "playwright" packages/frontend/package.json; then
+            exit 0
+          fi
+          echo "Playwright doesn't appear to be installed"
+          exit 1
+
+      # Check for E2E test files
+      - name: Check for E2E test files
+        id: check-e2e-files
+        continue-on-error: true
+        run: |
+          found=0
+          
+          # Check common Playwright test locations
+          if [ -d "e2e" ] && [ "$(ls -A e2e 2>/dev/null)" ]; then
+            found=1
+          elif [ -d "tests/e2e" ] && [ "$(ls -A tests/e2e 2>/dev/null)" ]; then
+            found=1
+          elif [ -d "packages/frontend/e2e" ] && [ "$(ls -A packages/frontend/e2e 2>/dev/null)" ]; then
+            found=1
+          elif [ -d "packages/frontend/tests/e2e" ] && [ "$(ls -A packages/frontend/tests/e2e 2>/dev/null)" ]; then
+            found=1
+          fi
+          
+          if [ $found -eq 0 ]; then
+            echo "No E2E test files found"
+            exit 1
+          fi
+          exit 0
+
+      # Check for delete tests in E2E files
+      - name: Check for delete tests in E2E files
+        id: check-delete-e2e-tests
+        continue-on-error: true
+        run: |
+          # Look for delete tests in any potential E2E test file locations
+          if find . -path "*/e2e/*.spec.js" -o -path "*/e2e/*.test.js" -o -path "*/tests/e2e/*.spec.js" -o -path "*/tests/e2e/*.test.js" | xargs grep -l "delete\|remove" > /dev/null; then
+            exit 0
+          fi
+          echo "No delete functionality tests found in E2E test files"
+          exit 1
 
       - name: Build message - step results
         id: build-message-step-results
@@ -63,11 +109,15 @@ jobs:
         with:
           template-file: exercise-toolkit/markdown-templates/step-feedback/step-results-table.md
           template-vars: |
-            step_number: 3-1
+            step_number: 4-7
             passed: ${{ !contains(steps.*.outcome, 'failure') }}
             results_table:
-              - description: "The `App.js` file should be updated to include an HTML table."
-                passed: ${{ steps.check-vanilla-table-component.outcome == 'success' }}
+              - description: "Playwright should be installed for E2E testing"
+                passed: ${{ steps.check-playwright-installed.outcome == 'success' }}
+              - description: "E2E test files should exist"
+                passed: ${{ steps.check-e2e-files.outcome == 'success' }}
+              - description: "E2E tests should include tests for delete functionality"
+                passed: ${{ steps.check-delete-e2e-tests.outcome == 'success' }}
 
       - name: Create comment - step results
         run: |
@@ -90,12 +140,12 @@ jobs:
         with:
           template-file: exercise-toolkit/markdown-templates/step-feedback/step-finished-prepare-next-step.md
           template-vars: |
-            next_step_number: 3-2
+            next_step_number: 5-1
 
       - name: Update comment - step finished
         run: |
           gh issue comment "$ISSUE_URL" \
-            --body "$ISSUE_BODY" \
+            --body "$ISSUE_BODY"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_BODY: ${{ steps.build-message-step-finish.outputs.updated-text }}
@@ -121,7 +171,7 @@ jobs:
       - name: Create comment - add step content
         run: |
           gh issue comment "$ISSUE_URL" \
-            --body-file "$STEP_3_FILE"
+            --body-file ".github/steps/4-8-code-coverage-improvement.md"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -134,7 +184,7 @@ jobs:
 
       - name: Disable current workflow and enable next one
         run: |
-          gh workflow disable "Step 3-1"
-          gh workflow enable "Step 3-2"
+          gh workflow disable "Step 4-7"
+          gh workflow enable "Step 4-8"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
