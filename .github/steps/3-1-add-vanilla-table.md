@@ -10,13 +10,7 @@ We will first create a table without explicitly instructing copilot to use the M
 
 1. Open the **Copilot** chat panel and switch to **Agent** mode using the dropdown menu.
 
-1. Use the following prompt to ask Copilot to convert the existing item section to a vanilla HTML table:
-
-   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
-   >
-   > ```prompt
-   > Convert our item-section to a table
-   > ```
+1. Provide a prompt that will convert the `item-section` to a table
 
 1. Copilot will analyze your codebase and implement:
    - Updating the `App.js` to implement a table in place of the current `item-section`
