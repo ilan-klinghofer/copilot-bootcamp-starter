@@ -146,9 +146,9 @@ jobs:
             passed: ${{ !contains(steps.*.outcome, 'failure') }}
             results_table:
               - description: "Tests for handleDelete function should exist in packages/frontend/src/__tests__/App.test.js"
-                passed: ${{ steps.check-delete-tests.outcome == 'success' }}
+                passed: ${{ steps.check-handle-delete-function.outcome == 'success' }}
               - description: "Integration tests should include proper testing structure with mocks"
-                passed: ${{ steps.check-test-structure.outcome == 'success' }}
+                passed: ${{ steps.check-mock-usage.outcome == 'success' }}
               - description: "Frontend tests should run successfully without errors"
                 passed: ${{ steps.run-frontend-tests.outcome == 'success' }}
 
