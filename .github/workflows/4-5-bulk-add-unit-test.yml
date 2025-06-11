@@ -261,16 +261,16 @@ jobs:
                 passed: ${{ steps.check-post-keyword.outcome == 'success' || steps.check-post-uppercase.outcome == 'success' }}
               - description: "Backend tests should include tests for item creation"
                 passed: ${{ steps.check-create-keyword-backend.outcome == 'success' }}
-              # - description: "Frontend test file should exist"
-              #   passed: ${{ steps.check-frontend-test-exists.outcome == 'success' }}
-              # - description: "Frontend tests should include tests for fetching items"
-              #   passed: ${{ steps.check-fetch-keyword.outcome == 'success' || steps.check-get-keyword-frontend.outcome == 'success' || steps.check-load-items.outcome == 'success' || steps.check-display-items.outcome == 'success' }}
-              # - description: "Frontend tests should include tests for creating items"
-              #   passed: ${{ steps.check-create-keyword-frontend.outcome == 'success' || steps.check-add-keyword.outcome == 'success' || steps.check-new-item.outcome == 'success' || steps.check-submit.outcome == 'success' }}
-              # - description: "Backend tests should run successfully"
-              #   passed: ${{ steps.run-backend-tests.outcome == 'success' }}
-              # - description: "Frontend tests should run successfully"
-              #   passed: ${{ steps.run-frontend-tests.outcome == 'success' }}
+              - description: "Frontend test file should exist"
+                passed: ${{ steps.check-frontend-test-exists.outcome == 'success' }}
+              - description: "Frontend tests should include tests for fetching items"
+                passed: ${{ steps.check-fetch-keyword.outcome == 'success' || steps.check-get-keyword-frontend.outcome == 'success' || steps.check-load-items.outcome == 'success' || steps.check-display-items.outcome == 'success' }}
+              - description: "Frontend tests should include tests for creating items"
+                passed: ${{ steps.check-create-keyword-frontend.outcome == 'success' || steps.check-add-keyword.outcome == 'success' || steps.check-new-item.outcome == 'success' || steps.check-submit.outcome == 'success' }}
+              - description: "Backend tests should run successfully"
+                passed: ${{ steps.run-backend-tests.outcome == 'success' }}
+              - description: "Frontend tests should run successfully"
+                passed: ${{ steps.run-frontend-tests.outcome == 'success' }}
 
       - name: Create comment - step results
         run: |
