@@ -281,6 +281,31 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COMMENT_BODY: ${{ steps.build-message-step-results.outputs.updated-text }}
 
+      - name: Debug step outcomes
+        run: |
+          echo "All step outcomes:"
+          echo "check-backend-test-exists: ${{ steps.check-backend-test-exists.outcome }}"
+          echo "check-get-keyword: ${{ steps.check-get-keyword.outcome }}"
+          echo "check-get-uppercase: ${{ steps.check-get-uppercase.outcome }}"
+          echo "check-items-endpoint: ${{ steps.check-items-endpoint.outcome }}"
+          echo "check-post-keyword: ${{ steps.check-post-keyword.outcome }}"
+          echo "check-post-uppercase: ${{ steps.check-post-uppercase.outcome }}"
+          echo "check-create-keyword-backend: ${{ steps.check-create-keyword-backend.outcome }}"
+          echo "check-frontend-test-exists: ${{ steps.check-frontend-test-exists.outcome }}"
+          echo "check-fetch-keyword: ${{ steps.check-fetch-keyword.outcome }}"
+          echo "check-get-keyword-frontend: ${{ steps.check-get-keyword-frontend.outcome }}"
+          echo "check-load-items: ${{ steps.check-load-items.outcome }}"
+          echo "check-display-items: ${{ steps.check-display-items.outcome }}"
+          echo "check-create-keyword-frontend: ${{ steps.check-create-keyword-frontend.outcome }}"
+          echo "check-add-keyword: ${{ steps.check-add-keyword.outcome }}"
+          echo "check-new-item: ${{ steps.check-new-item.outcome }}"
+          echo "check-submit: ${{ steps.check-submit.outcome }}"
+          echo "run-backend-tests: ${{ steps.run-backend-tests.outcome }}"
+          echo "run-frontend-tests: ${{ steps.run-frontend-tests.outcome }}"
+          echo "build-message-step-results: ${{ steps.build-message-step-results.outcome }}"
+          echo ""
+          echo "Contains failure check: ${{ contains(steps.*.outcome, 'failure') }}"
+
       - name: Fail job if not all checks passed
         if: contains(steps.*.outcome, 'failure')
         run: exit 1
