@@ -22,3 +22,7 @@ yarn-debug.log*
 yarn-error.log*
 
 .vscode/settings.json
+
+# E2E Test Results
+/test-results
+/playwright-report
