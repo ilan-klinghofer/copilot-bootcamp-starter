@@ -27,6 +27,7 @@ Let's add the backend unit tests for the delete api created in the previous less
 
 To complete this exercise successfully:
 - The codebase should have unit tests for DELETE endpoint in `packages/backend/__tests__/app.test.js` 
+- You may need to move and rename the test file generated to the location specified above for the validations to succeed.
 - The unit tests should runs successfully.
 
 If you encounter any issues, you can:

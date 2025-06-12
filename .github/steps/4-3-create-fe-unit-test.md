@@ -27,6 +27,7 @@ Let's add the frontend unit tests for the delete functionality created in the pr
 
 To complete this exercise successfully:
 - The codebase should have unit tests for delete button functionality in `packages/backend/__tests__/app.test.js` that runs successfully.
+- You may need to move and rename the test file generated to the location specified above for the validations to succeed.
 
 If you encounter any issues, you can:
 - Ask Copilot to fix specific problems
