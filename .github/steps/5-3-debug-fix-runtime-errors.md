@@ -2,7 +2,7 @@
 
 In this step, you'll use GitHub Copilot's Agent mode to fix some runtime errors. Use the logging added in the previous step to help identify and resolve these issues.
 
-1. Open the **Copilot** chat panel, switch to **Agent** mode and **Claude 3.7 Sonnet** model using the dropdown menus.
+1. Open the **Copilot** chat panel, switch to **Agent** mode and **Claude 4 Sonnet** model using the dropdown menus.
 
 2. :paperclip: Attach the following files to the GitHub Copilot Chat context window to include for debugging :paperclip: 
    1. `packages/frontend/src/components/ItemDetails.js`

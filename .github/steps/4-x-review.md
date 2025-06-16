@@ -7,7 +7,7 @@ _Congratulations, you've completed session 3 of the Copilot Bootcamp tutorial an
 Here's a recap of your accomplishments:
 
 - Set up your GitHub Codespace development environment
-- Used GitHub Copilot Agent Mode with Claude 3.7 Sonnet to modify application content
+- Used GitHub Copilot Agent Mode with Claude 4 Sonnet to modify application content
 - Implemented delete functionality across both frontend and backend components
 - Implemented 
 - Added, updated & troubleshooted frontend and backend unit tests
