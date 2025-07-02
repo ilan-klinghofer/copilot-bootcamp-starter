@@ -22,8 +22,6 @@ To more precisely guide copilot, we will need to add in MUI instructions, and up
    - `mui-guidelines.md` was created
    - `copilot-instructions.md` was updated
 
-5. Run the application with `npm run start` in the root directory to test the new functionality.
-
 ### Success Criteria
 
 To complete this exercise successfully, ensure that:
